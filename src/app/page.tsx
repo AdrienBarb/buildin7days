@@ -1,4 +1,36 @@
+"use client";
+
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  subscribeSchema,
+  type SubscribeFormData,
+} from "@/lib/schemas/subscribe";
+import useApi from "@/lib/hooks/useApi";
+import toast from "react-hot-toast";
+
 export default function Home() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<SubscribeFormData>({
+    resolver: zodResolver(subscribeSchema),
+  });
+
+  const { usePost } = useApi();
+  const { mutate: subscribe, isPending } = usePost("/subscribe", {
+    onSuccess: () => {
+      toast.success("Successfully subscribed to newsletter!");
+      reset();
+    },
+  });
+
+  const onSubmit = async (data: SubscribeFormData) => {
+    subscribe({ email: data.email });
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <main className="flex w-full max-w-4xl flex-col items-center gap-8 py-16">
@@ -20,20 +52,31 @@ export default function Home() {
             report showing exactly how to build each one in 7 days
           </p>
         </div>
-        <form className="flex w-full max-w-lg">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex w-full max-w-lg flex-col gap-2"
+        >
           <div className="flex w-full items-center rounded-full border border-input bg-card">
             <input
               type="email"
               placeholder="Email"
-              className="h-12 flex-1 rounded-l-full border-0 bg-transparent px-6 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-0"
+              {...register("email")}
+              disabled={isPending}
+              className="h-12 flex-1 rounded-l-full border-0 bg-transparent px-6 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-0 disabled:opacity-50"
             />
             <button
               type="submit"
-              className="flex h-12 items-center gap-2 rounded-r-full border-0 bg-transparent px-6 font-bold uppercase text-primary transition-colors hover:opacity-90"
+              disabled={isPending}
+              className="flex h-12 items-center cursor-pointer gap-2 rounded-r-full border-0 bg-transparent px-6 font-bold uppercase text-primary transition-colors hover:opacity-90 disabled:opacity-50"
             >
-              SUBSCRIBE
+              {isPending ? "SUBSCRIBING..." : "SUBSCRIBE"}
             </button>
           </div>
+          {errors.email && (
+            <p className="ml-6 text-sm text-destructive">
+              {errors.email.message}
+            </p>
+          )}
         </form>
       </main>
     </div>
