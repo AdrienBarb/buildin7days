@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import GlobalErrorHandler from "@/components/GlobalErrorHandler";
 import { QueryProviders } from "@/components/providers/QueryProviders";
 import { PostHogProvider } from "@/components/tracking/PostHogProvider";
+import { Navbar } from "@/components/navbar/Navbar";
 import { genPageMetadata } from "@/lib/seo/genPageMetadata";
 import { siteMetadata } from "@/data/siteMetadata";
 import "./globals.css";
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         <QueryProviders>
           <PostHogProvider>
+            <Navbar />
             {children}
             <Toaster position="bottom-center" />
             <GlobalErrorHandler />
