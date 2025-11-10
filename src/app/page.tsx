@@ -8,6 +8,7 @@ import {
 } from "@/lib/schemas/subscribe";
 import useApi from "@/lib/hooks/useApi";
 import toast from "react-hot-toast";
+import { Reassurance } from "@/components/reassurance/Reassurance";
 
 export default function Home() {
   const {
@@ -79,6 +80,7 @@ export default function Home() {
               </p>
             )}
           </form>
+          <Reassurance />
         </main>
       </div>
     </>
