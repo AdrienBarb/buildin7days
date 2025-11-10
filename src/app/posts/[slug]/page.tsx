@@ -151,291 +151,120 @@ export default async function PostPage({
         </div>
       </div>
 
-      {/* Pricing Cards - Wider Width */}
-      {(post.report || post.boilerplate || post.bundle) && (
+      {post.boilerplate && (
         <div
           id="pricing"
           className="max-w-6xl mx-auto w-full mt-16 scroll-mt-16"
         >
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              Save hours of research and coding.
+              Build your SaaS with confidence.
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get the full plan and ready-to-use Next.js boilerplate to launch
-              this startup in days, not weeks.
+              The Scale boilerplate gives you a complete, production-ready
+              foundation — from authentication to analytics — so you can focus
+              on what makes your product unique.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* 7-Day Launch Report */}
-            {post.report && (
-              <div className="border border-input bg-card rounded-lg p-6 flex flex-col gap-6 relative">
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    7-Day Launch Report
-                  </h3>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-foreground">
-                      €9.99
-                    </span>
-                    <span className="text-muted-foreground">EUR</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm mt-2">
-                    Everything you need to turn one startup idea into a real
-                    plan.
-                  </p>
-                </div>
 
-                <ul className="flex flex-col gap-3 flex-1">
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      1 complete startup plan
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Step-by-step 7-Day Launch guide
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      AI & no-code tools recommendations
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Marketing and validation strategy
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <XIcon />
-                    <span className="text-sm text-muted-foreground">
-                      Next.js boilerplate
-                    </span>
-                  </li>
-                </ul>
-
-                <div className="flex flex-col gap-4 mt-auto">
-                  <p className="text-sm text-muted-foreground italic">
-                    → Perfect if you want clarity and direction before coding.
-                  </p>
-                  <Button asChild className="w-full" size="lg">
-                    <a
-                      href={post.report}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Get the Report
-                    </a>
-                  </Button>
-                </div>
+          <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
+            <div className="border-2 border-primary bg-card rounded-lg p-6 flex flex-col gap-6 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold uppercase">
+                  Scale
+                </span>
               </div>
-            )}
 
-            {/* Next.js Boilerplate */}
-            {post.boilerplate && (
-              <div className="border border-input bg-card rounded-lg p-6 flex flex-col gap-6 relative">
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Next.js Boilerplate
-                  </h3>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-foreground">
-                      €19.99
-                    </span>
-                    <span className="text-muted-foreground">EUR</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm mt-2">
-                    A production-ready starter kit to build and launch your SaaS
-                    in days.
-                  </p>
-                </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-2xl font-bold text-foreground">
+                  Complete SaaS Boilerplate
+                </h3>
 
-                <ul className="flex flex-col gap-3 flex-1">
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Ready-to-use Next.js starter
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Authentication (Better Auth / Google / Magic Links)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Payments via LemonSqueezy
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Landing page included (marketing-ready)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Emails (Resend setup included)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      SEO, blog & transactional setup
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      AI-ready structure (OpenAI API included)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <XIcon />
-                    <span className="text-sm text-muted-foreground">
-                      7-Day Launch Report
-                    </span>
-                  </li>
-                </ul>
-
-                <div className="flex flex-col gap-4 mt-auto">
-                  <p className="text-sm text-muted-foreground italic">
-                    → Perfect if you already know your idea and want to start
-                    building.
-                  </p>
-                  <Button asChild className="w-full" size="lg">
-                    <a
-                      href={post.boilerplate}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Get the Boilerplate
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            )}
-
-            {/* The Complete Bundle */}
-            {post.bundle && (
-              <div className="border-2 border-primary bg-card rounded-lg p-6 flex flex-col gap-6 relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold uppercase">
-                    Best Value
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-foreground">
+                    €79.99
                   </span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    The Complete Bundle
-                  </h3>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-muted-foreground line-through">
-                      €29.99
-                    </span>
-                    <span className="text-3xl font-bold text-foreground">
-                      €24.99
-                    </span>
-                    <span className="text-muted-foreground">EUR</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm mt-2">
-                    Everything you need to go from idea to launch — in one week.
-                  </p>
+                  <span className="text-muted-foreground">EUR</span>
                 </div>
 
-                <ul className="flex flex-col gap-3 flex-1">
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      1 complete startup plan
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Step-by-step 7-Day Launch guide
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      AI & no-code tools recommendations
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Marketing and validation strategy
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Ready-to-use Next.js starter
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Authentication (Better Auth / Google / Magic Links)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Payments via LemonSqueezy
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Landing page included (marketing-ready)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      Emails (Resend setup included)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      SEO, blog & transactional setup
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckIcon />
-                    <span className="text-sm text-foreground">
-                      AI-ready structure (OpenAI API included)
-                    </span>
-                  </li>
-                </ul>
-
-                <div className="flex flex-col gap-4 mt-auto">
-                  <p className="text-sm text-muted-foreground italic">
-                    → Perfect if you want the full path: strategy + code +
-                    launch.
-                  </p>
-                  <Button asChild className="w-full" size="lg">
-                    <a
-                      href={post.bundle}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Get the Bundle
-                    </a>
-                  </Button>
-                </div>
+                <p className="text-muted-foreground text-sm mt-2">
+                  A robust Next.js foundation designed for modern SaaS products.
+                </p>
               </div>
-            )}
+
+              <ul className="flex flex-col gap-3 flex-1">
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    Authentication with Better-auth (Magic Link)
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    Payments powered by Lemon Squeezy
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    Database using Prisma + PostgreSQL (Supabase)
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    Email sending via Resend + React Email
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    Integrated waitlist flow
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    Analytics with PostHog
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    API client with React Query + Zustand
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    UI built with shadcn/ui, TypeScript, and Tailwind CSS v4
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon />
+                  <span className="text-sm text-foreground">
+                    Global error handling included
+                  </span>
+                </li>
+              </ul>
+
+              <div className="flex flex-col gap-4 mt-auto">
+                <p className="text-xs text-muted-foreground">
+                  After purchase, you’ll receive an email invitation to access
+                  the private GitHub repository.
+                </p>
+                <Button asChild className="w-full" size="lg">
+                  <a
+                    href={post.boilerplate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Scale
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       )}
