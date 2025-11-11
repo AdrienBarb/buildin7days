@@ -19,24 +19,6 @@ function CheckIcon() {
   );
 }
 
-function XIcon() {
-  return (
-    <svg
-      className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6 18L18 6M6 6l12 12"
-      />
-    </svg>
-  );
-}
-
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
   report,
@@ -256,7 +238,7 @@ export default async function PostPage({
                 </p>
                 <Button asChild className="w-full" size="lg">
                   <a
-                    href={post.boilerplate}
+                    href="https://buildin7days.lemonsqueezy.com/buy/304a7908-972e-4c7f-9376-f900e3e8dabd"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -11,12 +11,14 @@ export function Navbar() {
           <span className="text-foreground">DAYS</span>
         </Link>
         <div className="flex items-center gap-6">
-          <Link
-            href="/posts"
+          <a
+            href="https://buildin7days.beehiiv.com/archive"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-foreground hover:text-primary transition-colors"
           >
             All Startups
-          </Link>
+          </a>
         </div>
       </div>
     </nav>
