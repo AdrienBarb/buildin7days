@@ -65,8 +65,8 @@ export default function Home() {
             </h2>
 
             <p className="max-w-2xl text-center text-base leading-relaxed text-foreground text-montserrat font-extralight">
-              Receive new startup ideas every morning, plus a detailed report
-              showing exactly how to build each one in 7 days
+              Each morning, get one startup idea with analysis and a 7-day
+              roadmap to validate, build, and launch fast.
             </p>
           </div>
           <form
@@ -110,8 +110,8 @@ export default function Home() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             The Scale boilerplate gives you a complete, production-ready
-            foundation — from authentication to analytics — so you can focus
-            on what makes your product unique.
+            foundation — from authentication to analytics — so you can focus on
+            what makes your product unique.
           </p>
         </div>
 
@@ -199,8 +199,8 @@ export default function Home() {
 
             <div className="flex flex-col gap-4 mt-auto">
               <p className="text-xs text-muted-foreground">
-                After purchase, you'll receive an email invitation to access
-                the private GitHub repository.
+                After purchase, you'll receive an email invitation to access the
+                private GitHub repository.
               </p>
               <Button asChild className="w-full" size="lg">
                 <a
